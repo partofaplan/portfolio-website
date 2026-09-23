@@ -10,7 +10,7 @@ dependencies to keep current. Open `index.html` and it works.
 ```
 index.html              the whole page
 assets/css/styles.css   all styling; theme tokens live at the top
-assets/js/main.js       theme toggle, scroll-spy nav, expandable project grid
+assets/js/main.js       theme toggle, scroll-spy nav, stat counters, expandable project grid
 .github/workflows/      GitHub Pages deploy
 ```
 
@@ -43,14 +43,13 @@ marked by a comment banner:
 
 | Section | What lives there |
 | --- | --- |
-| `HERO` | Name, rotating tagline, pitch, four animated stat tiles |
-| `PRINCIPLES` | The four beliefs, each with its own accent, plus the current-role callout |
+| `HERO` | Name, role, one-line pitch, four animated stat tiles |
+| `PRINCIPLES` | Four one-line principles, each with its own accent |
 | `PROJECTS` | Six featured cards, then a collapsed grid of eight more |
-| `SANDBOX SHELF` | The nine learning repos, each framed as the question it answered |
+| `SANDBOX SHELF` | The nine learning repos, each as the question it answered |
 | `EXPERIENCE` | Timeline entries, then education and certifications |
-| `MARQUEE` | The scrolling technology band |
 | `WRITING` | Talks, workshops, essays, and standards docs |
-| `CONTACT` | Email, LinkedIn, GitHub, location |
+| `CONTACT` | Email, LinkedIn, GitHub |
 
 To add a project, copy an existing `<article class="card card--feature">` block.
 The `data-lang` attribute on `.card__lang` picks the badge color — `go`, `helm`,
@@ -75,11 +74,10 @@ the OS setting before first paint, and also adds a `js` class to `<html>`.
 Type is Space Grotesk for display and UI, Inter for body copy, JetBrains Mono
 for code and labels.
 
-Animated pieces: drifting aurora blobs in the hero, the rotating hero word,
-scroll-reveal on most blocks, counting stat tiles, the scroll-progress bar under
-the nav, and the technology marquee.
+Animated pieces: drifting aurora blobs in the hero, scroll-reveal on most
+blocks, counting stat tiles, and the scroll-progress bar under the nav.
 
 All of it is gated. Reveal states only apply when the `js` class is present, so
 the page is never blank without JavaScript, and everything is disabled under
-`prefers-reduced-motion: reduce` — the aurora and marquee stop entirely and
-content renders in its final state.
+`prefers-reduced-motion: reduce` — the aurora stops entirely and content
+renders in its final state.

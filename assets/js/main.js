@@ -96,20 +96,6 @@
     });
   }
 
-  /* ---------- hero word rotator ---------- */
-  var rotator = document.getElementById('rotator');
-  if (rotator) {
-    var words = Array.prototype.slice.call(rotator.querySelectorAll('.rotator__word'));
-    if (words.length > 1 && !reduced.matches) {
-      var at = 0;
-      setInterval(function () {
-        words[at].classList.remove('is-in');
-        at = (at + 1) % words.length;
-        words[at].classList.add('is-in');
-      }, 2600);
-    }
-  }
-
   /* ---------- stat counters ---------- */
   var counters = Array.prototype.slice.call(document.querySelectorAll('.counter'));
 
@@ -161,7 +147,7 @@
       var open = moreToggle.getAttribute('aria-expanded') === 'true';
       moreToggle.setAttribute('aria-expanded', String(!open));
       more.hidden = open;
-      if (label) label.textContent = open ? 'More from the workshop' : 'Show fewer';
+      if (label) label.textContent = open ? 'More projects' : 'Show fewer';
     });
   }
 

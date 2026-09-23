@@ -4,12 +4,12 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Zach Perkins — Senior Platform Engineer</title>
-<meta name="description" content="Zach Perkins is a senior platform engineer in Omaha, Nebraska. Platform engineering as iterative improvement: learning by building, shortening the path for other engineers, and making systems tell the truth." />
+<meta name="description" content="Zach Perkins, senior platform engineer in Omaha, Nebraska. Kubernetes operators, pipelines, and infrastructure for hard environments." />
 <meta name="author" content="Zach Perkins" />
 
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Zach Perkins — Senior Platform Engineer" />
-<meta property="og:description" content="Platform engineering as a practice of iterative improvement, learning by building, and elevating developer experience." />
+<meta property="og:description" content="Kubernetes operators, pipelines, and infrastructure for hard environments." />
 <meta name="twitter:card" content="summary" />
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b5cf6'/%3E%3Cstop offset='.55' stop-color='%2322d3ee'/%3E%3Cstop offset='1' stop-color='%23f472b6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%2307070e'/%3E%3Cpath d='M18 21h28L24 43h24' fill='none' stroke='url(%23g)' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
@@ -71,30 +71,20 @@
     <div class="hero__mesh" aria-hidden="true"></div>
 
     <div class="wrap hero__inner">
-      <p class="hero__eyebrow"><span class="pulse"></span> Omaha, Nebraska &middot; always mid-iteration</p>
+      <p class="hero__eyebrow"><span class="pulse"></span> Omaha, Nebraska</p>
 
       <h1 class="hero__name"><span class="grad-text">Zach Perkins</span></h1>
 
-      <p class="hero__role">
-        <span class="hero__role-static">Senior platform engineer, in it for the</span>
-        <span class="rotator" id="rotator" aria-live="polite">
-          <span class="rotator__word is-in">iterative improvement</span>
-          <span class="rotator__word">developer experience</span>
-          <span class="rotator__word">learning curve</span>
-          <span class="rotator__word">feedback loops</span>
-        </span>
-      </p>
+      <p class="hero__role">Senior Platform Engineer</p>
 
       <p class="hero__pitch">
-        Platform engineering, to me, is not a job title — it is a practice. Learn something
-        new, shorten the path for the engineers behind you, measure whether it actually
-        helped, and go again. Ten years of doing that has mostly looked like Kubernetes
-        operators, pipelines, and infrastructure in the places where it is hard.
+        I build platforms that make other engineers faster: Kubernetes operators, pipelines,
+        and infrastructure for airgapped and regulated environments.
       </p>
 
       <div class="hero__actions">
-        <a class="btn btn--primary" href="#principles">How I work</a>
-        <a class="btn" href="#projects">See the work</a>
+        <a class="btn btn--primary" href="#projects">Projects</a>
+        <a class="btn" href="#experience">Experience</a>
         <a class="btn btn--icon" href="https://github.com/partofaplan" target="_blank" rel="noopener" aria-label="GitHub">
           <svg viewBox="0 0 16 16" aria-hidden="true" class="btn__icon"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.4 7.4 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
         </a>
@@ -105,19 +95,19 @@
 
       <dl class="stats" data-reveal>
         <div class="stat">
-          <dt>Years in the practice</dt>
+          <dt>Years experience</dt>
           <dd><span class="counter" data-count="10">0</span><span class="stat__plus">+</span></dd>
         </div>
         <div class="stat">
-          <dt>Sandboxes built to learn</dt>
+          <dt>Sandbox repos</dt>
           <dd><span class="counter" data-count="9">0</span></dd>
         </div>
         <div class="stat">
-          <dt>Operators shipped in Go</dt>
+          <dt>Go operators</dt>
           <dd><span class="counter" data-count="4">0</span></dd>
         </div>
         <div class="stat">
-          <dt>Talks &amp; workshops given</dt>
+          <dt>Talks &amp; workshops</dt>
           <dd><span class="counter" data-count="5">0</span></dd>
         </div>
       </dl>
@@ -128,79 +118,36 @@
   <section class="section section--alt" id="principles">
     <div class="wrap">
       <div class="section__head" data-reveal>
-        <span class="kicker">What I actually believe</span>
-        <h2 class="section__title">Four things I keep coming back to</h2>
-        <p class="section__sub">
-          These are not aspirations posted on a wall. Each one came out of getting it wrong
-          first, and each one shows up in the projects and the writing further down.
-        </p>
+        <span class="kicker">Principles</span>
+        <h2 class="section__title">How I work</h2>
       </div>
 
       <div class="principles">
 
         <article class="principle" data-reveal style="--p-accent: var(--violet);">
           <span class="principle__num">01</span>
-          <h3 class="principle__title">Iterate. Don't heroically rebuild.</h3>
-          <p>
-            The instinct to break your back on a problem is not the same as solving it. I sort
-            work into four buckets now: quick wins that unblock someone today, easy fixes with
-            hard implications that need consensus first, real problems that belong to somebody
-            else's growth, and the hero trap — the ones I <em>want</em> to solve because saving
-            the day feels good.
-          </p>
-          <p class="principle__quote">
-            "The real skill isn't in solving every problem. It's in recognizing which problems
-            deserve your energy and which ones deserve your restraint."
-          </p>
+          <h3 class="principle__title">Iterate, don't rebuild.</h3>
+          <p>Small, steady improvements beat heroic rewrites. Pick the problems worth solving.</p>
         </article>
 
         <article class="principle" data-reveal style="--p-accent: var(--cyan);">
           <span class="principle__num">02</span>
-          <h3 class="principle__title">Learn by standing it up and breaking it.</h3>
-          <p>
-            I have nine sandbox repositories and not one of them was an assignment. KEDA,
-            Bedrock, agentic loops, local voice models, PVC behavior, Rancher's audit
-            internals. Reading the docs tells you what a tool claims. Standing it up, pushing
-            until it fails, and writing down where it bit tells you what it actually is —
-            and that is the knowledge worth having when it matters at 3 a.m.
-          </p>
+          <h3 class="principle__title">Learn by breaking things.</h3>
+          <p>Stand it up, push it until it fails, and write down what happened.</p>
         </article>
 
         <article class="principle" data-reveal style="--p-accent: var(--pink);">
           <span class="principle__num">03</span>
-          <h3 class="principle__title">Elevate the developer experience, or don't bother.</h3>
-          <p>
-            A platform nobody adopts is a hobby. If an engineer is sitting idle waiting on an
-            environment, that is my defect, not theirs — and "it takes two days to get a dev
-            environment" is a problem you delete rather than document. Both
-            <a href="#projects">kad and kado-operator</a> exist for exactly that reason.
-          </p>
+          <h3 class="principle__title">Developer experience first.</h3>
+          <p>A platform nobody adopts is a hobby. An engineer waiting on an environment is a platform bug.</p>
         </article>
 
         <article class="principle" data-reveal style="--p-accent: var(--lime);">
           <span class="principle__num">04</span>
-          <h3 class="principle__title">Make the system tell you the truth.</h3>
-          <p>
-            Applications that ship without signals do not tell anyone they are sick — they
-            just look fine until production disagrees. Feedback loops belong embedded at every
-            step of promotion: the playground, the proving ground, and the show ground. QA is
-            not a discipline adjacent to development; it is the spine of it.
-          </p>
-          <p class="principle__quote">
-            "What is not seen is not quantified, and when it is not quantified we cannot act."
-          </p>
+          <h3 class="principle__title">Make systems tell the truth.</h3>
+          <p>Build feedback loops into every stage, not after the first incident.</p>
         </article>
 
-      </div>
-
-      <div class="about" data-reveal>
-        <p class="about__now">
-          <span class="tag tag--live">Right now</span>
-          Platform architecture for a Department of Defense program at <strong>Aviture</strong> —
-          self-managed RKE2/Rancher clusters in an airgapped government cloud, supporting
-          mission-critical Java workloads. Which is a long way of saying: the constraints are
-          real, and the feedback loops have to be better because of it.
-        </p>
       </div>
     </div>
   </section>
@@ -209,12 +156,9 @@
   <section class="section" id="projects">
     <div class="wrap">
       <div class="section__head" data-reveal>
-        <span class="kicker">Selected projects</span>
-        <h2 class="section__title">Things built to shorten someone's path</h2>
-        <p class="section__sub">
-          Public on <a href="https://github.com/partofaplan" target="_blank" rel="noopener">github.com/partofaplan</a>.
-          Every one of these started as a friction I got tired of explaining.
-        </p>
+        <span class="kicker">Projects</span>
+        <h2 class="section__title">Selected work</h2>
+        <p class="section__sub">All public on <a href="https://github.com/partofaplan" target="_blank" rel="noopener">github.com/partofaplan</a>.</p>
       </div>
 
       <div class="projects">
@@ -224,25 +168,12 @@
             <h3 class="card__title">kado-operator</h3>
             <span class="card__lang" data-lang="go">Go</span>
           </header>
-          <p class="card__tagline">Development environments as a custom resource.</p>
-          <p class="card__body">
-            A Kubernetes operator that provisions and reclaims an entire development
-            environment from one CRD. A <code>DevEnvironment</code> owns a namespace and
-            everything in it — a ConfigMap built from spec, copies of referenced Secrets, a
-            shared PVC, and a Deployment plus ClusterIP Service per requested backing service.
-            Services find each other by name. A finalizer takes the whole namespace back down
-            on delete, so nothing leaks and nothing lingers on the bill.
-          </p>
-          <pre class="card__code"><code>$ kubectl get devenvironments
-NAME         PHASE   NAMESPACE    READY   SERVICES   AGE
-team-alpha   Ready   team-alpha   2       2          30s</code></pre>
+          <p class="card__tagline">Dev environments as a Kubernetes custom resource.</p>
+          <p class="card__body">One CRD provisions a namespace, config, secrets, storage, and services, then cleans it all up on delete.</p>
           <ul class="chips">
-            <li>controller-runtime</li><li>CRDs</li><li>Helm</li><li>Multi-arch</li><li>CI</li>
+            <li>controller-runtime</li><li>CRDs</li><li>Helm</li>
           </ul>
-          <footer class="card__foot">
-            <span class="card__meta">137 commits &middot; on Docker Hub</span>
-            <a class="card__link" href="https://github.com/partofaplan/kado-operator" target="_blank" rel="noopener">Repository <span aria-hidden="true">&rarr;</span></a>
-          </footer>
+          <a class="card__link" href="https://github.com/partofaplan/kado-operator" target="_blank" rel="noopener">Repository <span aria-hidden="true">&rarr;</span></a>
         </article>
 
         <article class="card card--feature" data-reveal>
@@ -250,25 +181,12 @@ team-alpha   Ready   team-alpha   2       2          30s</code></pre>
             <h3 class="card__title">kad</h3>
             <span class="card__lang" data-lang="go">Go</span>
           </header>
-          <p class="card__tagline">An instant Kubernetes dev environment, from one file.</p>
-          <p class="card__body">
-            The local counterpart: a single static binary with no runtime dependencies that
-            builds a minikube cluster to a declaration your team checks in, installs the
-            tooling and backing services, tells you how to reach them, and deletes all of it
-            again. <code>kad doctor</code> budgets the cluster against the
-            <em>container runtime</em> rather than the host, so it fails with a useful message
-            <em>before</em> minikube does — not thirty seconds after.
-          </p>
-          <pre class="card__code"><code>$ kad init &amp;&amp; kad doctor
-$ kad up
-$ kad down</code></pre>
+          <p class="card__tagline">Local Kubernetes dev environments from one file.</p>
+          <p class="card__body">A single binary that builds a minikube cluster from a checked-in config, installs services, and tears it down.</p>
           <ul class="chips">
-            <li>CLI</li><li>minikube</li><li>Checksummed releases</li><li>macOS + Linux</li>
+            <li>CLI</li><li>minikube</li><li>macOS + Linux</li>
           </ul>
-          <footer class="card__foot">
-            <span class="card__meta">v2.0.0 &middot; single static binary</span>
-            <a class="card__link" href="https://github.com/partofaplan/kad" target="_blank" rel="noopener">Repository <span aria-hidden="true">&rarr;</span></a>
-          </footer>
+          <a class="card__link" href="https://github.com/partofaplan/kad" target="_blank" rel="noopener">Repository <span aria-hidden="true">&rarr;</span></a>
         </article>
 
         <article class="card card--feature" data-reveal>
@@ -276,23 +194,12 @@ $ kad down</code></pre>
             <h3 class="card__title">rancher-audit-log-operator</h3>
             <span class="card__lang" data-lang="go">Go</span>
           </header>
-          <p class="card__tagline">Turning Rancher UI audit JSON into sentences a human can read.</p>
-          <p class="card__body">
-            Rancher's UI audit trail is an application-level log, not kube-apiserver audit, and
-            raw it is close to unreadable. A Kubebuilder operator reconciles a Filebeat shipper
-            from an <code>AuditLogConfig</code> CR, and each entry is enriched at ingest into an
-            <code>audit.summary</code> sentence — <code>zperkins create deployments monitoring/web</code>
-            — so "who did what, when" is one Kibana query. Ships as a local two-cluster sandbox
-            <em>and</em> a Helm-deployed production path into an airgapped cluster, with a
-            documented handoff package for the ELK team.
-          </p>
+          <p class="card__tagline">Rancher audit logs a human can read.</p>
+          <p class="card__body">Turns raw UI audit JSON into one-line summaries in Kibana. Deploys to airgapped clusters with Helm.</p>
           <ul class="chips">
-            <li>Kubebuilder</li><li>Filebeat</li><li>Elasticsearch</li><li>Kibana</li><li>Airgap</li>
+            <li>Kubebuilder</li><li>Filebeat</li><li>ELK</li><li>Airgap</li>
           </ul>
-          <footer class="card__foot">
-            <span class="card__meta">Operator + chart + integration docs</span>
-            <a class="card__link" href="https://github.com/partofaplan/rancher-audit-log-sandbox" target="_blank" rel="noopener">Repository <span aria-hidden="true">&rarr;</span></a>
-          </footer>
+          <a class="card__link" href="https://github.com/partofaplan/rancher-audit-log-sandbox" target="_blank" rel="noopener">Repository <span aria-hidden="true">&rarr;</span></a>
         </article>
 
         <article class="card card--feature" data-reveal>
@@ -300,22 +207,12 @@ $ kad down</code></pre>
             <h3 class="card__title">postgres-delta</h3>
             <span class="card__lang" data-lang="helm">Helm</span>
           </header>
-          <p class="card__tagline">HA PostgreSQL that reconfigures without a restart.</p>
-          <p class="card__body">
-            Patroni-managed PostgreSQL&nbsp;16 with streaming replicas and automatic failover,
-            packaged as a chart. The interesting part is the upgrade path: change
-            <code>patroni.postgresql.parameters</code>, run <code>helm upgrade</code>, and a
-            post-upgrade hook pushes the rendered config through the Patroni API so PostgreSQL
-            reloads — no pod restarts, no failover, no downtime. A PodDisruptionBudget and soft
-            anti-affinity keep quorum intact through node maintenance.
-          </p>
+          <p class="card__tagline">HA PostgreSQL with zero-restart config changes.</p>
+          <p class="card__body">Patroni replicas and automatic failover. Config changes apply on <code>helm upgrade</code> with no downtime.</p>
           <ul class="chips">
-            <li>Patroni</li><li>Streaming replication</li><li>PDB</li><li>RBAC</li>
+            <li>Patroni</li><li>Replication</li><li>PDB</li>
           </ul>
-          <footer class="card__foot">
-            <span class="card__meta">Read/write + read-only services</span>
-            <a class="card__link" href="https://github.com/partofaplan/postgres-delta" target="_blank" rel="noopener">Repository <span aria-hidden="true">&rarr;</span></a>
-          </footer>
+          <a class="card__link" href="https://github.com/partofaplan/postgres-delta" target="_blank" rel="noopener">Repository <span aria-hidden="true">&rarr;</span></a>
         </article>
 
         <article class="card card--feature" data-reveal>
@@ -323,21 +220,12 @@ $ kad down</code></pre>
             <h3 class="card__title">airgap-postgres</h3>
             <span class="card__lang" data-lang="helm">Helm</span>
           </header>
-          <p class="card__tagline">A database cluster that installs with the internet unplugged.</p>
-          <p class="card__body">
-            PostgreSQL&nbsp;18 in HA behind a pair of HAProxy load balancers — port 5432 routes
-            to the primary for writes, 5433 spreads reads across every node — with hourly
-            CronJob backups and scripted recovery. Every image resolves to a single registry,
-            which is the whole point: in a disconnected environment, one chart that never
-            reaches out is worth more than a dozen that almost do.
-          </p>
+          <p class="card__tagline">HA PostgreSQL for disconnected clusters.</p>
+          <p class="card__body">HAProxy read/write split, hourly backups, and every image pulled from a single registry.</p>
           <ul class="chips">
-            <li>HAProxy</li><li>Replication</li><li>CronJob backups</li><li>Single registry</li>
+            <li>HAProxy</li><li>Backups</li><li>Airgap</li>
           </ul>
-          <footer class="card__foot">
-            <span class="card__meta">Built for disconnected Kubernetes</span>
-            <a class="card__link" href="https://github.com/partofaplan/airgap-postgres" target="_blank" rel="noopener">Repository <span aria-hidden="true">&rarr;</span></a>
-          </footer>
+          <a class="card__link" href="https://github.com/partofaplan/airgap-postgres" target="_blank" rel="noopener">Repository <span aria-hidden="true">&rarr;</span></a>
         </article>
 
         <article class="card card--feature" data-reveal>
@@ -345,27 +233,18 @@ $ kad down</code></pre>
             <h3 class="card__title">voice-ai-sandbox</h3>
             <span class="card__lang" data-lang="ts">TypeScript</span>
           </header>
-          <p class="card__tagline">A complete voice loop where every stage is swappable.</p>
-          <p class="card__body">
-            Mic capture gated on silence, then speech-to-text, then an LLM, then
-            text-to-speech, then playback. Each stage is an engine selected by environment
-            variable, so the identical loop runs fully offline on whisper.cpp, Ollama, and
-            Kokoro, or hybrid on Deepgram, Claude, and ElevenLabs. Built to answer a practical
-            question: how much of a voice assistant can you actually run with no network at all?
-          </p>
+          <p class="card__tagline">A voice assistant with swappable parts.</p>
+          <p class="card__body">Mic, speech-to-text, LLM, text-to-speech. Runs fully offline or on cloud APIs.</p>
           <ul class="chips">
-            <li>Node</li><li>whisper.cpp</li><li>Ollama</li><li>Claude</li><li>ElevenLabs</li>
+            <li>whisper.cpp</li><li>Ollama</li><li>Claude</li>
           </ul>
-          <footer class="card__foot">
-            <span class="card__meta">Local and hybrid behind one interface</span>
-            <a class="card__link" href="https://github.com/partofaplan/voice-ai-sandbox" target="_blank" rel="noopener">Repository <span aria-hidden="true">&rarr;</span></a>
-          </footer>
+          <a class="card__link" href="https://github.com/partofaplan/voice-ai-sandbox" target="_blank" rel="noopener">Repository <span aria-hidden="true">&rarr;</span></a>
         </article>
 
       </div>
 
       <button class="more-toggle" id="moreToggle" type="button" aria-expanded="false" aria-controls="moreProjects">
-        <span class="more-toggle__label">More from the workshop</span>
+        <span class="more-toggle__label">More projects</span>
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
       </button>
 
@@ -377,11 +256,7 @@ $ kad down</code></pre>
               <h3 class="card__title">k8s-webhook-operator</h3>
               <span class="card__lang" data-lang="go">Go</span>
             </header>
-            <p class="card__body">
-              An HTTP-driven controller that cordons, drains, and uncordons nodes on REST calls,
-              using the upstream kubectl drain helper behind RBAC. Node maintenance an
-              automation system can trigger without anyone shelling in.
-            </p>
+            <p class="card__body">Cordon, drain, and uncordon nodes with a REST call.</p>
             <a class="card__link" href="https://github.com/partofaplan/k8s-webhook-operator" target="_blank" rel="noopener">Repository <span aria-hidden="true">&rarr;</span></a>
           </article>
 
@@ -390,11 +265,7 @@ $ kad down</code></pre>
               <h3 class="card__title">github-java-runner</h3>
               <span class="card__lang" data-lang="k8s">Kubernetes</span>
             </header>
-            <p class="card__body">
-              A self-hosted GitHub Actions runner on Kubernetes that requests short-lived
-              registration tokens through the GitHub API and deregisters itself cleanly when
-              the pod terminates. Least-privilege by default, JDK&nbsp;17 and Maven on top.
-            </p>
+            <p class="card__body">Self-hosted GitHub Actions runner that registers and cleans up after itself.</p>
             <a class="card__link" href="https://github.com/partofaplan/github-java-runner" target="_blank" rel="noopener">Repository <span aria-hidden="true">&rarr;</span></a>
           </article>
 
@@ -403,11 +274,7 @@ $ kad down</code></pre>
               <h3 class="card__title">ai_sandbox &middot; Zachbot</h3>
               <span class="card__lang" data-lang="go">Go</span>
             </header>
-            <p class="card__body">
-              A Go web service fronting a self-hosted Ollama model, with a Helm chart that
-              deploys the service and model server together — including a reload path that
-              rebuilds the model from a Modelfile in the running container.
-            </p>
+            <p class="card__body">Go service and Helm chart for a self-hosted Ollama model.</p>
             <a class="card__link" href="https://github.com/partofaplan/ai_sandbox" target="_blank" rel="noopener">Repository <span aria-hidden="true">&rarr;</span></a>
           </article>
 
@@ -416,11 +283,7 @@ $ kad down</code></pre>
               <h3 class="card__title">cafe-lean</h3>
               <span class="card__lang" data-lang="js">JavaScript</span>
             </header>
-            <p class="card__body">
-              A Lean Coffee board built because the existing ones were bad: a shared display
-              for the room, facilitator controls for timers and vote limits, and live
-              participant voting that updates the board in real time.
-            </p>
+            <p class="card__body">Real-time Lean Coffee board with timers and live voting.</p>
             <a class="card__link" href="https://github.com/partofaplan/cafe-lean" target="_blank" rel="noopener">Repository <span aria-hidden="true">&rarr;</span></a>
           </article>
 
@@ -429,11 +292,7 @@ $ kad down</code></pre>
               <h3 class="card__title">oracle-terraform</h3>
               <span class="card__lang" data-lang="hcl">HCL</span>
             </header>
-            <p class="card__body">
-              Terraform for Oracle Cloud covering database provisioning and RKE2 node setup —
-              the ground floor under the Kubernetes work, kept in code so the cluster
-              underneath is as reproducible as the workloads on it.
-            </p>
+            <p class="card__body">Terraform for Oracle Cloud databases and RKE2 nodes.</p>
             <a class="card__link" href="https://github.com/partofaplan/oracle-terraform" target="_blank" rel="noopener">Repository <span aria-hidden="true">&rarr;</span></a>
           </article>
 
@@ -442,11 +301,7 @@ $ kad down</code></pre>
               <h3 class="card__title">observability-stack</h3>
               <span class="card__lang" data-lang="k8s">Kubernetes</span>
             </header>
-            <p class="card__body">
-              Reusable Kubernetes observability deployments — Elasticsearch, Kibana, and the
-              shipping layer — packaged so a new cluster gets signals on day one instead of
-              after the first incident.
-            </p>
+            <p class="card__body">Drop-in Elasticsearch and Kibana so new clusters have signals on day one.</p>
             <a class="card__link" href="https://github.com/partofaplan/observability-stack" target="_blank" rel="noopener">Repository <span aria-hidden="true">&rarr;</span></a>
           </article>
 
@@ -455,11 +310,7 @@ $ kad down</code></pre>
               <h3 class="card__title">tank-duel</h3>
               <span class="card__lang" data-lang="misc">Cross-platform</span>
             </header>
-            <p class="card__body">
-              A turn-based artillery game with destructible terrain, ballistic physics, force
-              fields, and difficulty-scaling AI — packaged and released for Windows, macOS,
-              and Linux. The release engineering habit does not switch off after hours.
-            </p>
+            <p class="card__body">Turn-based artillery game released for Windows, macOS, and Linux.</p>
             <a class="card__link" href="https://github.com/partofaplan/tank-duel" target="_blank" rel="noopener">Repository <span aria-hidden="true">&rarr;</span></a>
           </article>
 
@@ -468,11 +319,7 @@ $ kad down</code></pre>
               <h3 class="card__title">snake-game</h3>
               <span class="card__lang" data-lang="js">JavaScript</span>
             </header>
-            <p class="card__body">
-              A Snake webapp with a leaderboard, shipped through the same PR-and-workflow
-              discipline as everything else. Small, finished, and deployed — which is the
-              point.
-            </p>
+            <p class="card__body">Snake with a leaderboard. Small, finished, deployed.</p>
             <a class="card__link" href="https://github.com/partofaplan/snake-game" target="_blank" rel="noopener">Repository <span aria-hidden="true">&rarr;</span></a>
           </article>
 
@@ -485,76 +332,63 @@ $ kad down</code></pre>
   <section class="section section--alt" id="sandbox">
     <div class="wrap">
       <div class="section__head" data-reveal>
-        <span class="kicker">The sandbox habit</span>
-        <h2 class="section__title">Nine repos that were nobody's assignment</h2>
-        <p class="section__sub">
-          This is what "learning new things" looks like for me in practice. Each of these
-          started as a question I could not answer from documentation, and ended as something
-          I had actually run, broken, and understood.
-        </p>
+        <span class="kicker">Sandbox</span>
+        <h2 class="section__title">Learning by building</h2>
+        <p class="section__sub">Side repos, each answering one question.</p>
       </div>
 
       <div class="shelf">
         <article class="sbox" data-reveal>
           <h3 class="sbox__name">agentic-sandbox</h3>
-          <p class="sbox__q">Can an agent rank CVEs by <em>real</em> risk, not raw severity?</p>
-          <p class="sbox__a">A self-hosted security agent that scans every workload in a k3d cluster and writes a prioritized mitigation plan — narrative generated locally by Ollama.</p>
+          <p class="sbox__q">Can an agent rank CVEs by real risk?</p>
           <span class="sbox__lang">Python</span>
         </article>
 
         <article class="sbox" data-reveal>
           <h3 class="sbox__name">aws-bedrock-sandbox</h3>
-          <p class="sbox__q">What is the smallest working Bedrock endpoint?</p>
-          <p class="sbox__a">A CDK app provisioning API Gateway → Lambda → Bedrock Converse API, and nothing more than that.</p>
+          <p class="sbox__q">What's the smallest working Bedrock endpoint?</p>
           <span class="sbox__lang">TypeScript</span>
         </article>
 
         <article class="sbox" data-reveal>
           <h3 class="sbox__name">voice-ai-sandbox</h3>
-          <p class="sbox__q">How much of a voice assistant runs with no network?</p>
-          <p class="sbox__a">A full mic → STT → LLM → TTS loop where every stage swaps between a local and a cloud engine by environment variable.</p>
+          <p class="sbox__q">How much of a voice assistant runs offline?</p>
           <span class="sbox__lang">TypeScript</span>
         </article>
 
         <article class="sbox" data-reveal>
           <h3 class="sbox__name">rancher-audit-log-sandbox</h3>
-          <p class="sbox__q">Where does Rancher actually write UI audit events?</p>
-          <p class="sbox__a">Answer: an application-level log on a sidecar, not kube-apiserver audit. That finding turned into a production operator and Helm chart.</p>
+          <p class="sbox__q">Where does Rancher write UI audit events?</p>
           <span class="sbox__lang">Go</span>
         </article>
 
         <article class="sbox" data-reveal>
           <h3 class="sbox__name">ai_sandbox</h3>
-          <p class="sbox__q">What does self-hosting a model actually cost me?</p>
-          <p class="sbox__a">Zachbot — a Go service fronting Ollama, with a Helm chart deploying both and a live model-reload path.</p>
+          <p class="sbox__q">What does self-hosting a model cost?</p>
           <span class="sbox__lang">Go</span>
         </article>
 
         <article class="sbox" data-reveal>
           <h3 class="sbox__name">keda-sandbox</h3>
-          <p class="sbox__q">Where does event-driven scaling beat a CPU-based HPA?</p>
-          <p class="sbox__a">Autoscaling experiments plus a cluster-adjacent file-transfer host, working out which moving parts earn their keep.</p>
+          <p class="sbox__q">When does event-driven scaling beat HPA?</p>
           <span class="sbox__lang">Python</span>
         </article>
 
         <article class="sbox" data-reveal>
           <h3 class="sbox__name">pvc-sandbox</h3>
-          <p class="sbox__q">How do PVCs really behave under a stateful Java app?</p>
-          <p class="sbox__a">Storage behavior pinned down by experiment rather than by reading the CSI spec and hoping.</p>
+          <p class="sbox__q">How do PVCs behave under a stateful Java app?</p>
           <span class="sbox__lang">Java</span>
         </article>
 
         <article class="sbox" data-reveal>
           <h3 class="sbox__name">claude-sandbox</h3>
-          <p class="sbox__q">What is it like to build against an LLM directly?</p>
-          <p class="sbox__a">A chat UI wired to a local model endpoint — the groundwork behind setting org-wide standards for generative AI in engineering workflows.</p>
+          <p class="sbox__q">What's it like to build directly on an LLM?</p>
           <span class="sbox__lang">HTML</span>
         </article>
 
         <article class="sbox" data-reveal>
           <h3 class="sbox__name">kubernetes-sandbox</h3>
           <p class="sbox__q">What belongs in a shared build mono-repo?</p>
-          <p class="sbox__a">A scratch space for Kubernetes builds — the staging area where most of the ideas above got their first bad version.</p>
           <span class="sbox__lang">Go</span>
         </article>
       </div>
@@ -565,12 +399,9 @@ $ kad down</code></pre>
   <section class="section" id="experience">
     <div class="wrap">
       <div class="section__head" data-reveal>
-        <span class="kicker">Professional experience</span>
-        <h2 class="section__title">Ten years, one through-line</h2>
-        <p class="section__sub">
-          Defense, healthcare, fitness SaaS, marketplace, edge IoT. Different domains, same
-          job: make the path shorter and the signals louder for the people building on top.
-        </p>
+        <span class="kicker">Experience</span>
+        <h2 class="section__title">Ten years of platform work</h2>
+        <p class="section__sub">Defense, healthcare, SaaS, marketplace, and edge IoT.</p>
       </div>
 
       <ol class="timeline">
@@ -766,25 +597,13 @@ $ kad down</code></pre>
     </div>
   </section>
 
-  <!-- ─────────────────────────── MARQUEE ─────────────────────────── -->
-  <div class="marquee" id="skills" aria-hidden="true">
-    <div class="marquee__track">
-      <span>Kubernetes</span><i></i><span>RKE2</span><i></i><span>Rancher</span><i></i><span>Go</span><i></i><span>Helm</span><i></i><span>Terraform</span><i></i><span>Ansible</span><i></i><span>Pulumi</span><i></i><span>GitLab CI/CD</span><i></i><span>Jenkins</span><i></i><span>Prometheus</span><i></i><span>Grafana</span><i></i><span>Loki</span><i></i><span>Elasticsearch</span><i></i><span>PostgreSQL</span><i></i><span>Patroni</span><i></i><span>Podman</span><i></i><span>AWS</span><i></i><span>Azure</span><i></i><span>OCI</span><i></i><span>Python</span><i></i><span>TypeScript</span><i></i><span>RHEL</span><i></i><span>NIST 800-53</span><i></i>
-      <span>Kubernetes</span><i></i><span>RKE2</span><i></i><span>Rancher</span><i></i><span>Go</span><i></i><span>Helm</span><i></i><span>Terraform</span><i></i><span>Ansible</span><i></i><span>Pulumi</span><i></i><span>GitLab CI/CD</span><i></i><span>Jenkins</span><i></i><span>Prometheus</span><i></i><span>Grafana</span><i></i><span>Loki</span><i></i><span>Elasticsearch</span><i></i><span>PostgreSQL</span><i></i><span>Patroni</span><i></i><span>Podman</span><i></i><span>AWS</span><i></i><span>Azure</span><i></i><span>OCI</span><i></i><span>Python</span><i></i><span>TypeScript</span><i></i><span>RHEL</span><i></i><span>NIST 800-53</span><i></i>
-    </div>
-  </div>
-
   <!-- ─────────────────────────── WRITING & TALKS ─────────────────────────── -->
-  <section class="section" id="writing">
+  <section class="section section--alt" id="writing">
     <div class="wrap">
       <div class="section__head" data-reveal>
-        <span class="kicker">Writing &amp; presentations</span>
-        <h2 class="section__title">Thinking out loud, on purpose</h2>
-        <p class="section__sub">
-          Conference talks, internal lightning talks, and essays. The recurring theme: the
-          hardest problems in platform engineering are usually organizational problems wearing
-          a technical costume.
-        </p>
+        <span class="kicker">Writing</span>
+        <h2 class="section__title">Talks &amp; essays</h2>
+        <p class="section__sub">Decks and drafts available on request.</p>
       </div>
 
       <div class="writing">
@@ -795,11 +614,7 @@ $ kad down</code></pre>
             <span class="post__venue">Nebraska.Code() &middot; 2022</span>
           </div>
           <h3 class="post__title">Migrating Azure App Services to AKS</h3>
-          <p class="post__body">
-            A field report from moving a production healthcare-staffing platform off Azure App
-            Service and onto Kubernetes — what the migration bought, what it cost, and why the
-            real win was not the containers but retiring the overnight maintenance window.
-          </p>
+          <p class="post__body">Moving a production platform to Kubernetes, and retiring the overnight maintenance window.</p>
         </article>
 
         <article class="post" data-reveal>
@@ -808,53 +623,25 @@ $ kad down</code></pre>
             <span class="post__venue">Nebraska.Code() &middot; 2023</span>
           </div>
           <h3 class="post__title">Deploying Infrastructure with Pulumi</h3>
-          <p class="post__body">
-            A hands-on session on infrastructure as real code — using Pulumi to provision and
-            manage cloud resources in a general-purpose language, and where that helps compared
-            to declarative-only tooling.
-          </p>
+          <p class="post__body">Hands-on infrastructure as code in a general-purpose language.</p>
         </article>
 
-        <article class="post post--feature" data-reveal>
+        <article class="post" data-reveal>
           <div class="post__meta">
             <span class="badge badge--talk">Talk</span>
             <span class="post__venue">2025</span>
           </div>
           <h3 class="post__title">The Key Is Culture</h3>
-          <p class="post__sub">Why it takes a growth mindset to combat organizational entropy</p>
-          <p class="post__body">
-            Organizational entropy is the gradual decline of teams and systems into disorder.
-            Knowledge silos form, bottlenecks appear, the hero mentality takes over, and
-            standards quietly stop existing. The talk argues these behaviors are not character
-            flaws but adaptive responses to a broken system — and that culture is
-            <strong>process + people + purpose</strong>, something you architect deliberately
-            rather than something you hope for.
-          </p>
-          <blockquote class="post__quote">
-            "Today's brilliant, Red Bull-slinging cowboy engineer is tomorrow's
-            'idiot who built this thing.'"
-          </blockquote>
+          <p class="post__body">Silos and hero culture come from broken systems, and culture is something you design.</p>
         </article>
 
-        <article class="post post--feature" data-reveal>
+        <article class="post" data-reveal>
           <div class="post__meta">
             <span class="badge badge--talk">Lightning talk</span>
             <span class="post__venue">2026</span>
           </div>
           <h3 class="post__title">Seeing Is Believing</h3>
-          <p class="post__sub">Feedback loops in DevOps, and why validation matters</p>
-          <p class="post__body">
-            Opens at 3&nbsp;a.m. with a page, a cache filling a production disk, and an app that
-            looked perfectly healthy in every lower environment — because the cache was
-            traffic-generated and nothing downstream of dev ever generated traffic. From there
-            it names the DevOps death spiral: bandaid, forget, inherit, repeat. The fix is
-            structural — the playground, the proving ground, and the show ground, each with
-            feedback loops embedded rather than bolted on.
-          </p>
-          <blockquote class="post__quote">
-            "What is not seen is not quantified, and when it is not quantified we cannot act.
-            QA is not a separate discipline from development — it is the spine of development."
-          </blockquote>
+          <p class="post__body">Why feedback loops belong in every environment, not just production.</p>
         </article>
 
         <article class="post" data-reveal>
@@ -863,14 +650,7 @@ $ kad down</code></pre>
             <span class="post__venue">2025</span>
           </div>
           <h3 class="post__title">The Power of Mission</h3>
-          <p class="post__sub">Goals get you to a finish line. Missions give you a reason to keep running.</p>
-          <p class="post__body">
-            On the difference between a goal — specific, measurable, short-term — and a mission,
-            which is long-term and identity-oriented. Employees are surrounded by deadlines,
-            KPIs, and performance reviews; what they are actually looking for is something
-            bigger than themselves. Closes on a line worth keeping: people don't want to just
-            succeed at work, they want to matter.
-          </p>
+          <p class="post__body">Goals get you to a finish line. A mission gives you a reason to keep going.</p>
         </article>
 
         <article class="post" data-reveal>
@@ -879,18 +659,7 @@ $ kad down</code></pre>
             <span class="post__venue">2026</span>
           </div>
           <h3 class="post__title">The Four Problem Buckets</h3>
-          <p class="post__body">
-            A framework for triage, written after the burnout that comes from saying yes to
-            everything. <strong>Tackle it now</strong> — quick wins that unblock someone.
-            <strong>Easy fix, hard implications</strong> — the deceptive ones that ripple
-            through five other teams. <strong>Not now, but later</strong> — real problems that
-            belong to someone else's growth. And <strong>the hero trap</strong>, the hardest
-            bucket, where you want to save the day but restraint is the more valuable skill.
-          </p>
-          <blockquote class="post__quote">
-            "The real skill isn't in solving every problem. It's in recognizing which problems
-            deserve your energy and which ones deserve your restraint."
-          </blockquote>
+          <p class="post__body">A triage framework: fix it now, handle with care, save for later, or skip the hero trap.</p>
         </article>
 
         <article class="post" data-reveal>
@@ -899,18 +668,7 @@ $ kad down</code></pre>
             <span class="post__venue">2026</span>
           </div>
           <h3 class="post__title">What DevOps Actually Means</h3>
-          <p class="post__body">
-            DevOps started as a post-Agile movement to reduce friction between development and
-            operations, then became a job title, and is now a moving target. This piece stakes
-            out a definition borrowed from Google's SRE book and argues the disciplines have
-            converged on one goal — take problems and solve them with code — which requires
-            front-loading planning and sandboxing instead of breaking your back on the problem
-            in front of you.
-          </p>
-          <blockquote class="post__quote">
-            "Work smarter, not harder. Once the planning stage is complete, we get to run fast
-            with solutions we already know work."
-          </blockquote>
+          <p class="post__body">Solve problems with code, and plan and sandbox before you sprint.</p>
         </article>
 
         <article class="post" data-reveal>
@@ -919,22 +677,10 @@ $ kad down</code></pre>
             <span class="post__venue">2025</span>
           </div>
           <h3 class="post__title">Platform Engineering Best Practices</h3>
-          <p class="post__body">
-            The internal standards document adopted across teams: base images versioned in code
-            and patched only through a pipeline; protected trunk with two approvers and test
-            criteria on every merge request; no merge request older than a sprint, because code
-            gets stale; deployments through versioned Helm releases only, with rollback to the
-            last revision; and application monitors that account for every dependent
-            connection, not just the web tier.
-          </p>
+          <p class="post__body">Team-wide standards for images, merge requests, Helm releases, and monitoring.</p>
         </article>
 
       </div>
-
-      <p class="writing__note" data-reveal>
-        Decks and drafts available on request — several were delivered internally and are not
-        yet published.
-      </p>
     </div>
   </section>
 
@@ -942,12 +688,8 @@ $ kad down</code></pre>
   <section class="section section--contact" id="contact">
     <div class="wrap">
       <div class="cta" data-reveal>
-        <span class="kicker">Get in touch</span>
-        <h2 class="cta__title">Let's talk about <span class="grad-text">making the path shorter</span>.</h2>
-        <p class="cta__lead">
-          Kubernetes in hard environments, platform strategy, developer experience, or anything
-          in the sandbox shelf above — I am always happy to compare notes.
-        </p>
+        <span class="kicker">Contact</span>
+        <h2 class="cta__title">Let's <span class="grad-text">talk</span>.</h2>
         <div class="contact__links">
           <a class="contact__link" href="mailto:partofaplan@gmail.com">
             <span class="contact__label">Email</span>
@@ -961,10 +703,6 @@ $ kad down</code></pre>
             <span class="contact__label">GitHub</span>
             <span class="contact__value">@partofaplan</span>
           </a>
-          <div class="contact__link contact__link--static">
-            <span class="contact__label">Based in</span>
-            <span class="contact__value">Omaha, Nebraska</span>
-          </div>
         </div>
       </div>
     </div>
@@ -975,7 +713,7 @@ $ kad down</code></pre>
 <footer class="footer">
   <div class="wrap footer__inner">
     <p>&copy; <span id="year">2026</span> Zach Perkins</p>
-    <p class="footer__note">Static site. No trackers, no analytics, no cookies.</p>
+    <p class="footer__note">No trackers, no cookies.</p>
   </div>
 </footer>
 
