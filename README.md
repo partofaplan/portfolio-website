@@ -10,7 +10,7 @@ dependencies to keep current. Open `index.html` and it works.
 ```
 index.html              the whole page
 assets/css/styles.css   all styling; theme tokens live at the top
-assets/js/main.js       theme toggle, scroll-spy nav, stat counters, expandable project grid
+assets/js/main.js       theme, dateline, ticker, scroll-spy nav, counters, project grid
 .github/workflows/      GitHub Pages deploy
 ```
 
@@ -38,46 +38,43 @@ and point a DNS `CNAME` record at `partofaplan.github.io`.
 
 ## Editing content
 
-Everything is in `index.html`, in the order the page renders, with each section
-marked by a comment banner:
+The page is laid out like a newspaper. Everything is in `index.html`, in the
+order it renders, with each section marked by a comment banner:
 
 | Section | What lives there |
 | --- | --- |
-| `HERO` | Name, role, one-line pitch, four animated stat tiles |
-| `PRINCIPLES` | Four one-line principles, each with its own accent |
-| `PROJECTS` | Six featured cards, then a collapsed grid of eight more |
-| `SANDBOX SHELF` | The nine learning repos, each as the question it answered |
-| `EXPERIENCE` | Timeline entries, then education and certifications |
-| `WRITING` | Talks, workshops, essays, and standards docs |
+| `MASTHEAD` | Dateline, rotating "Latest" headlines, nameplate, ears, motto |
+| `FRONT PAGE` | Lead story, "By the Numbers" stat box, "Inside" index |
+| `PRINCIPLES` | Editorial: four one-line principles |
+| `PROJECTS` | Six stories, then a collapsed grid of eight more |
+| `SANDBOX` | The nine learning repos, each as the question it answered |
+| `EXPERIENCE` | Career record, then education and certifications |
+| `WRITING` | Opinion: talks, workshops, essays, and standards docs |
 | `CONTACT` | Email, LinkedIn, GitHub |
 
-To add a project, copy an existing `<article class="card card--feature">` block.
-The `data-lang` attribute on `.card__lang` picks the badge color — `go`, `helm`,
-`hcl`, `ts`, `js`, `py`, `k8s`, or `misc`.
-
-To change a principle's accent, edit the inline `--p-accent` on that
-`<article class="principle">`.
+To add a project, copy an existing `<article class="story">` block. Rows of
+stories, principles, and posts sit in a `.cols` grid, which draws the hairline
+column rules itself, so items need no borders of their own.
 
 ## Theming
 
 Colors are CSS custom properties in two blocks at the top of `styles.css`:
-`:root` for dark, `:root[data-theme="light"]` for light. The light block uses
-deliberately darker accent values so text and borders stay legible on white —
-change a token in both places and the whole page follows, including the
-`--grad` gradient used by the name, kickers, stat numbers, and buttons.
+`:root` for light newsprint, `:root[data-theme="dark"]` for dark. Change a token
+in both places and the whole page follows. `--accent` is the single editorial
+red used for kickers, labels, and the active nav link.
 
-Dark is the default. An inline script in `<head>` applies a saved preference or
+Light is the default. An inline script in `<head>` applies a saved preference or
 the OS setting before first paint, and also adds a `js` class to `<html>`.
+
+Type is Playfair Display for the nameplate and headlines, Source Serif 4 for
+body copy, and Libre Franklin for small caps labels.
 
 ## Motion
 
-Type is Space Grotesk for display and UI, Inter for body copy, JetBrains Mono
-for code and labels.
-
-Animated pieces: drifting aurora blobs in the hero, scroll-reveal on most
-blocks, counting stat tiles, and the scroll-progress bar under the nav.
+Animated pieces: the rotating "Latest" line in the masthead, the live dateline,
+scroll-reveal on most blocks, counting stat figures, the nav picking up the name
+once the masthead scrolls away, and the red scroll-progress rule under the nav.
 
 All of it is gated. Reveal states only apply when the `js` class is present, so
 the page is never blank without JavaScript, and everything is disabled under
-`prefers-reduced-motion: reduce` — the aurora stops entirely and content
-renders in its final state.
+`prefers-reduced-motion: reduce`, where content renders in its final state.

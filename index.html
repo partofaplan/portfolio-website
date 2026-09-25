@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -12,26 +12,26 @@
 <meta property="og:description" content="Kubernetes operators, pipelines, and infrastructure for hard environments." />
 <meta name="twitter:card" content="summary" />
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b5cf6'/%3E%3Cstop offset='.55' stop-color='%2322d3ee'/%3E%3Cstop offset='1' stop-color='%23f472b6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%2307070e'/%3E%3Cpath d='M18 21h28L24 43h24' fill='none' stroke='url(%23g)' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23f6f1e7'/%3E%3Crect x='3' y='3' width='58' height='58' rx='5' fill='none' stroke='%231b1813' stroke-width='2'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='32' fill='%231b1813'%3EZP%3C/text%3E%3C/svg%3E" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Libre+Franklin:wght@500;600;700&display=swap" />
 <link rel="stylesheet" href="assets/css/styles.css" />
 
 <script>
   // Runs before first paint: mark that JS is alive (reveal animations only arm
   // when it is, so the page is never blank without it) and settle the theme so
   // there is no flash of the wrong one. Storage throws in some private-browsing
-  // modes, so it is guarded and falls back to the dark default on the root.
+  // modes, so it is guarded and falls back to the light default on the root.
   (function () {
     document.documentElement.classList.add('js');
     try {
       var saved = localStorage.getItem('theme');
       if (saved === 'light' || saved === 'dark') {
         document.documentElement.setAttribute('data-theme', saved);
-      } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
-        document.documentElement.setAttribute('data-theme', 'light');
+      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.setAttribute('data-theme', 'dark');
       }
     } catch (e) { /* keep the default */ }
   })();
@@ -41,62 +41,78 @@
 
 <a class="skip-link" href="#main">Skip to content</a>
 
-<header class="nav" id="nav">
-  <div class="nav__inner">
-    <a class="nav__brand" href="#top">
-      <span class="nav__mark" aria-hidden="true"></span>
-      <span>zach perkins</span>
-    </a>
-    <nav class="nav__links" aria-label="Sections">
-      <a href="#principles">Principles</a>
-      <a href="#projects">Projects</a>
-      <a href="#sandbox">Sandbox</a>
-      <a href="#experience">Experience</a>
-      <a href="#writing">Writing</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme">
+<!-- ─────────────────────────── MASTHEAD ─────────────────────────── -->
+<header class="masthead" id="top">
+  <div class="wrap topbar">
+    <span class="topbar__date" id="today"></span>
+    <p class="topbar__latest">
+      <b>Latest</b>
+      <span class="ticker" id="ticker">
+        <span class="ticker__item is-in">Now: Senior Platform Engineer at Aviture</span>
+        <span class="ticker__item">Released: kad v2.0.0</span>
+        <span class="ticker__item">New talk: Seeing Is Believing</span>
+        <span class="ticker__item">New essay: The Four Problem Buckets</span>
+      </span>
+    </p>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark theme">
       <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
       <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
     </button>
   </div>
-  <div class="nav__progress" id="navProgress" aria-hidden="true"></div>
+
+  <div class="wrap masthead__main">
+    <p class="ear ear--left">Est. 2015<span>Ten years in platform engineering</span></p>
+    <h1 class="masthead__title"><a href="#top">Zach Perkins</a></h1>
+    <p class="ear ear--right">Omaha Edition<span>Kubernetes &middot; Pipelines &middot; Infrastructure</span></p>
+  </div>
+
+  <div class="wrap">
+    <p class="masthead__motto">Senior Platform Engineer &middot; Omaha, Nebraska</p>
+  </div>
 </header>
+
+<nav class="nav" id="nav" aria-label="Sections">
+  <div class="wrap nav__inner">
+    <a class="nav__brand" href="#top" tabindex="-1" aria-hidden="true">Zach Perkins</a>
+    <div class="nav__links">
+      <a href="#principles">Editorial</a>
+      <a href="#projects">Projects</a>
+      <a href="#sandbox">Sandbox</a>
+      <a href="#experience">Career</a>
+      <a href="#writing">Opinion</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+  <div class="nav__progress" id="navProgress" aria-hidden="true"></div>
+</nav>
 
 <main id="main">
 
-  <!-- ─────────────────────────── HERO ─────────────────────────── -->
-  <section class="hero" id="top">
-    <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
-    <div class="hero__mesh" aria-hidden="true"></div>
-
-    <div class="wrap hero__inner">
-      <p class="hero__eyebrow"><span class="pulse"></span> Omaha, Nebraska</p>
-
-      <h1 class="hero__name"><span class="grad-text">Zach Perkins</span></h1>
-
-      <p class="hero__role">Senior Platform Engineer</p>
-
-      <p class="hero__pitch">
-        I build platforms that make other engineers faster: Kubernetes operators, pipelines,
-        and infrastructure for airgapped and regulated environments.
-      </p>
-
-      <div class="hero__actions">
-        <a class="btn btn--primary" href="#projects">Projects</a>
-        <a class="btn" href="#experience">Experience</a>
-        <a class="btn btn--icon" href="https://github.com/partofaplan" target="_blank" rel="noopener" aria-label="GitHub">
-          <svg viewBox="0 0 16 16" aria-hidden="true" class="btn__icon"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.4 7.4 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
-        </a>
-        <a class="btn btn--icon" href="https://www.linkedin.com/in/zachperkins" target="_blank" rel="noopener" aria-label="LinkedIn">
-          <svg viewBox="0 0 16 16" aria-hidden="true" class="btn__icon"><path d="M3.4 5.3H.6V15h2.8V5.3ZM2 1a1.7 1.7 0 1 0 0 3.4A1.7 1.7 0 0 0 2 1Zm7.6 4.1c-1.4 0-2.1.75-2.4 1.3V5.3H4.4c.04.8 0 9.7 0 9.7h2.8V9.6c0-.25.02-.5.09-.68.2-.5.65-1.02 1.42-1.02 1 0 1.4.76 1.4 1.88V15h2.8V9.45c0-2.6-1.38-3.8-3.23-3.8Z"/></svg>
-        </a>
+  <!-- ─────────────────────────── FRONT PAGE ─────────────────────────── -->
+  <section class="wrap front" id="front">
+    <article class="lead" data-reveal>
+      <span class="kicker">Front Page</span>
+      <h2 class="lead__headline">Platform engineer builds the tools that make other engineers faster</h2>
+      <p class="lead__deck">Ten years of Kubernetes operators, pipelines, and infrastructure for airgapped and regulated environments.</p>
+      <p class="byline">By Zach Perkins &middot; Omaha, Neb.</p>
+      <div class="lead__body">
+        <p class="dropcap">Zach Perkins builds platforms that shorten the path for other engineers. His work centers on Kubernetes operators, CI/CD pipelines, and infrastructure where the constraints are real.</p>
+        <p>He currently leads platform architecture for a Department of Defense program at Aviture, running self-managed RKE2 clusters in an airgapped government cloud.</p>
       </div>
+      <div class="lead__actions">
+        <a class="btn btn--primary" href="#projects">Read the projects</a>
+        <a class="btn" href="#experience">Career record</a>
+        <a class="btn" href="https://github.com/partofaplan" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/zachperkins" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </article>
 
-      <dl class="stats" data-reveal>
+    <aside class="sidebar" data-reveal>
+      <h2 class="sidebar__title">By the Numbers</h2>
+      <dl class="stats">
         <div class="stat">
           <dt>Years experience</dt>
-          <dd><span class="counter" data-count="10">0</span><span class="stat__plus">+</span></dd>
+          <dd><span class="counter" data-count="10">0</span>+</dd>
         </div>
         <div class="stat">
           <dt>Sandbox repos</dt>
@@ -111,43 +127,51 @@
           <dd><span class="counter" data-count="5">0</span></dd>
         </div>
       </dl>
-    </div>
+
+      <h2 class="sidebar__title">Inside</h2>
+      <ol class="inside">
+        <li><a href="#principles">How I Work</a><span>A2</span></li>
+        <li><a href="#projects">Selected Work</a><span>A3</span></li>
+        <li><a href="#sandbox">Learning by Building</a><span>A5</span></li>
+        <li><a href="#experience">Career Record</a><span>B1</span></li>
+        <li><a href="#writing">Talks &amp; Essays</a><span>C1</span></li>
+        <li><a href="#contact">Correspondence</a><span>C4</span></li>
+      </ol>
+    </aside>
   </section>
 
   <!-- ─────────────────────────── PRINCIPLES ─────────────────────────── -->
-  <section class="section section--alt" id="principles">
+  <section class="section" id="principles">
     <div class="wrap">
-      <div class="section__head" data-reveal>
-        <span class="kicker">Principles</span>
-        <h2 class="section__title">How I work</h2>
-      </div>
+      <header class="section__head" data-reveal>
+        <span class="kicker">Editorial</span>
+        <h2 class="section__title">How I Work</h2>
+      </header>
 
-      <div class="principles">
-
-        <article class="principle" data-reveal style="--p-accent: var(--violet);">
-          <span class="principle__num">01</span>
+      <div class="cols cols--4">
+        <article class="principle" data-reveal>
+          <span class="principle__num">I.</span>
           <h3 class="principle__title">Iterate, don't rebuild.</h3>
           <p>Small, steady improvements beat heroic rewrites. Pick the problems worth solving.</p>
         </article>
 
-        <article class="principle" data-reveal style="--p-accent: var(--cyan);">
-          <span class="principle__num">02</span>
+        <article class="principle" data-reveal>
+          <span class="principle__num">II.</span>
           <h3 class="principle__title">Learn by breaking things.</h3>
           <p>Stand it up, push it until it fails, and write down what happened.</p>
         </article>
 
-        <article class="principle" data-reveal style="--p-accent: var(--pink);">
-          <span class="principle__num">03</span>
+        <article class="principle" data-reveal>
+          <span class="principle__num">III.</span>
           <h3 class="principle__title">Developer experience first.</h3>
           <p>A platform nobody adopts is a hobby. An engineer waiting on an environment is a platform bug.</p>
         </article>
 
-        <article class="principle" data-reveal style="--p-accent: var(--lime);">
-          <span class="principle__num">04</span>
+        <article class="principle" data-reveal>
+          <span class="principle__num">IV.</span>
           <h3 class="principle__title">Make systems tell the truth.</h3>
           <p>Build feedback loops into every stage, not after the first incident.</p>
         </article>
-
       </div>
     </div>
   </section>
@@ -155,90 +179,60 @@
   <!-- ─────────────────────────── PROJECTS ─────────────────────────── -->
   <section class="section" id="projects">
     <div class="wrap">
-      <div class="section__head" data-reveal>
+      <header class="section__head" data-reveal>
         <span class="kicker">Projects</span>
-        <h2 class="section__title">Selected work</h2>
+        <h2 class="section__title">Selected Work</h2>
         <p class="section__sub">All public on <a href="https://github.com/partofaplan" target="_blank" rel="noopener">github.com/partofaplan</a>.</p>
-      </div>
+      </header>
 
-      <div class="projects">
+      <div class="cols cols--3">
 
-        <article class="card card--feature" data-reveal>
-          <header class="card__head">
-            <h3 class="card__title">kado-operator</h3>
-            <span class="card__lang" data-lang="go">Go</span>
-          </header>
-          <p class="card__tagline">Dev environments as a Kubernetes custom resource.</p>
-          <p class="card__body">One CRD provisions a namespace, config, secrets, storage, and services, then cleans it all up on delete.</p>
-          <ul class="chips">
-            <li>controller-runtime</li><li>CRDs</li><li>Helm</li>
-          </ul>
-          <a class="card__link" href="https://github.com/partofaplan/kado-operator" target="_blank" rel="noopener">Repository <span aria-hidden="true">&rarr;</span></a>
+        <article class="story" data-reveal>
+          <span class="story__label">Go &middot; Operator</span>
+          <h3 class="story__title"><a href="https://github.com/partofaplan/kado-operator" target="_blank" rel="noopener">kado-operator</a></h3>
+          <p class="story__deck">Dev environments as a Kubernetes custom resource.</p>
+          <p class="story__body">One CRD provisions a namespace, config, secrets, storage, and services, then cleans it all up on delete.</p>
+          <p class="story__tags">controller-runtime &middot; CRDs &middot; Helm</p>
         </article>
 
-        <article class="card card--feature" data-reveal>
-          <header class="card__head">
-            <h3 class="card__title">kad</h3>
-            <span class="card__lang" data-lang="go">Go</span>
-          </header>
-          <p class="card__tagline">Local Kubernetes dev environments from one file.</p>
-          <p class="card__body">A single binary that builds a minikube cluster from a checked-in config, installs services, and tears it down.</p>
-          <ul class="chips">
-            <li>CLI</li><li>minikube</li><li>macOS + Linux</li>
-          </ul>
-          <a class="card__link" href="https://github.com/partofaplan/kad" target="_blank" rel="noopener">Repository <span aria-hidden="true">&rarr;</span></a>
+        <article class="story" data-reveal>
+          <span class="story__label">Go &middot; CLI</span>
+          <h3 class="story__title"><a href="https://github.com/partofaplan/kad" target="_blank" rel="noopener">kad</a></h3>
+          <p class="story__deck">Local Kubernetes dev environments from one file.</p>
+          <p class="story__body">A single binary that builds a minikube cluster from a checked-in config, installs services, and tears it down.</p>
+          <p class="story__tags">minikube &middot; macOS + Linux</p>
         </article>
 
-        <article class="card card--feature" data-reveal>
-          <header class="card__head">
-            <h3 class="card__title">rancher-audit-log-operator</h3>
-            <span class="card__lang" data-lang="go">Go</span>
-          </header>
-          <p class="card__tagline">Rancher audit logs a human can read.</p>
-          <p class="card__body">Turns raw UI audit JSON into one-line summaries in Kibana. Deploys to airgapped clusters with Helm.</p>
-          <ul class="chips">
-            <li>Kubebuilder</li><li>Filebeat</li><li>ELK</li><li>Airgap</li>
-          </ul>
-          <a class="card__link" href="https://github.com/partofaplan/rancher-audit-log-sandbox" target="_blank" rel="noopener">Repository <span aria-hidden="true">&rarr;</span></a>
+        <article class="story" data-reveal>
+          <span class="story__label">Go &middot; Operator</span>
+          <h3 class="story__title"><a href="https://github.com/partofaplan/rancher-audit-log-sandbox" target="_blank" rel="noopener">rancher-audit-log-operator</a></h3>
+          <p class="story__deck">Rancher audit logs a human can read.</p>
+          <p class="story__body">Turns raw UI audit JSON into one-line summaries in Kibana. Deploys to airgapped clusters with Helm.</p>
+          <p class="story__tags">Kubebuilder &middot; Filebeat &middot; ELK &middot; Airgap</p>
         </article>
 
-        <article class="card card--feature" data-reveal>
-          <header class="card__head">
-            <h3 class="card__title">postgres-delta</h3>
-            <span class="card__lang" data-lang="helm">Helm</span>
-          </header>
-          <p class="card__tagline">HA PostgreSQL with zero-restart config changes.</p>
-          <p class="card__body">Patroni replicas and automatic failover. Config changes apply on <code>helm upgrade</code> with no downtime.</p>
-          <ul class="chips">
-            <li>Patroni</li><li>Replication</li><li>PDB</li>
-          </ul>
-          <a class="card__link" href="https://github.com/partofaplan/postgres-delta" target="_blank" rel="noopener">Repository <span aria-hidden="true">&rarr;</span></a>
+        <article class="story" data-reveal>
+          <span class="story__label">Helm &middot; Database</span>
+          <h3 class="story__title"><a href="https://github.com/partofaplan/postgres-delta" target="_blank" rel="noopener">postgres-delta</a></h3>
+          <p class="story__deck">HA PostgreSQL with zero-restart config changes.</p>
+          <p class="story__body">Patroni replicas and automatic failover. Config changes apply on <code>helm upgrade</code> with no downtime.</p>
+          <p class="story__tags">Patroni &middot; Replication &middot; PDB</p>
         </article>
 
-        <article class="card card--feature" data-reveal>
-          <header class="card__head">
-            <h3 class="card__title">airgap-postgres</h3>
-            <span class="card__lang" data-lang="helm">Helm</span>
-          </header>
-          <p class="card__tagline">HA PostgreSQL for disconnected clusters.</p>
-          <p class="card__body">HAProxy read/write split, hourly backups, and every image pulled from a single registry.</p>
-          <ul class="chips">
-            <li>HAProxy</li><li>Backups</li><li>Airgap</li>
-          </ul>
-          <a class="card__link" href="https://github.com/partofaplan/airgap-postgres" target="_blank" rel="noopener">Repository <span aria-hidden="true">&rarr;</span></a>
+        <article class="story" data-reveal>
+          <span class="story__label">Helm &middot; Database</span>
+          <h3 class="story__title"><a href="https://github.com/partofaplan/airgap-postgres" target="_blank" rel="noopener">airgap-postgres</a></h3>
+          <p class="story__deck">HA PostgreSQL for disconnected clusters.</p>
+          <p class="story__body">HAProxy read/write split, hourly backups, and every image pulled from a single registry.</p>
+          <p class="story__tags">HAProxy &middot; Backups &middot; Airgap</p>
         </article>
 
-        <article class="card card--feature" data-reveal>
-          <header class="card__head">
-            <h3 class="card__title">voice-ai-sandbox</h3>
-            <span class="card__lang" data-lang="ts">TypeScript</span>
-          </header>
-          <p class="card__tagline">A voice assistant with swappable parts.</p>
-          <p class="card__body">Mic, speech-to-text, LLM, text-to-speech. Runs fully offline or on cloud APIs.</p>
-          <ul class="chips">
-            <li>whisper.cpp</li><li>Ollama</li><li>Claude</li>
-          </ul>
-          <a class="card__link" href="https://github.com/partofaplan/voice-ai-sandbox" target="_blank" rel="noopener">Repository <span aria-hidden="true">&rarr;</span></a>
+        <article class="story" data-reveal>
+          <span class="story__label">TypeScript &middot; AI</span>
+          <h3 class="story__title"><a href="https://github.com/partofaplan/voice-ai-sandbox" target="_blank" rel="noopener">voice-ai-sandbox</a></h3>
+          <p class="story__deck">A voice assistant with swappable parts.</p>
+          <p class="story__body">Mic, speech-to-text, LLM, text-to-speech. Runs fully offline or on cloud APIs.</p>
+          <p class="story__tags">whisper.cpp &middot; Ollama &middot; Claude</p>
         </article>
 
       </div>
@@ -249,78 +243,54 @@
       </button>
 
       <div class="more" id="moreProjects" hidden>
-        <div class="grid-sm">
+        <div class="cols cols--4">
 
-          <article class="card card--sm">
-            <header class="card__head">
-              <h3 class="card__title">k8s-webhook-operator</h3>
-              <span class="card__lang" data-lang="go">Go</span>
-            </header>
-            <p class="card__body">Cordon, drain, and uncordon nodes with a REST call.</p>
-            <a class="card__link" href="https://github.com/partofaplan/k8s-webhook-operator" target="_blank" rel="noopener">Repository <span aria-hidden="true">&rarr;</span></a>
+          <article class="story story--sm">
+            <span class="story__label">Go</span>
+            <h3 class="story__title"><a href="https://github.com/partofaplan/k8s-webhook-operator" target="_blank" rel="noopener">k8s-webhook-operator</a></h3>
+            <p class="story__body">Cordon, drain, and uncordon nodes with a REST call.</p>
           </article>
 
-          <article class="card card--sm">
-            <header class="card__head">
-              <h3 class="card__title">github-java-runner</h3>
-              <span class="card__lang" data-lang="k8s">Kubernetes</span>
-            </header>
-            <p class="card__body">Self-hosted GitHub Actions runner that registers and cleans up after itself.</p>
-            <a class="card__link" href="https://github.com/partofaplan/github-java-runner" target="_blank" rel="noopener">Repository <span aria-hidden="true">&rarr;</span></a>
+          <article class="story story--sm">
+            <span class="story__label">Kubernetes</span>
+            <h3 class="story__title"><a href="https://github.com/partofaplan/github-java-runner" target="_blank" rel="noopener">github-java-runner</a></h3>
+            <p class="story__body">Self-hosted GitHub Actions runner that registers and cleans up after itself.</p>
           </article>
 
-          <article class="card card--sm">
-            <header class="card__head">
-              <h3 class="card__title">ai_sandbox &middot; Zachbot</h3>
-              <span class="card__lang" data-lang="go">Go</span>
-            </header>
-            <p class="card__body">Go service and Helm chart for a self-hosted Ollama model.</p>
-            <a class="card__link" href="https://github.com/partofaplan/ai_sandbox" target="_blank" rel="noopener">Repository <span aria-hidden="true">&rarr;</span></a>
+          <article class="story story--sm">
+            <span class="story__label">Go</span>
+            <h3 class="story__title"><a href="https://github.com/partofaplan/ai_sandbox" target="_blank" rel="noopener">ai_sandbox &middot; Zachbot</a></h3>
+            <p class="story__body">Go service and Helm chart for a self-hosted Ollama model.</p>
           </article>
 
-          <article class="card card--sm">
-            <header class="card__head">
-              <h3 class="card__title">cafe-lean</h3>
-              <span class="card__lang" data-lang="js">JavaScript</span>
-            </header>
-            <p class="card__body">Real-time Lean Coffee board with timers and live voting.</p>
-            <a class="card__link" href="https://github.com/partofaplan/cafe-lean" target="_blank" rel="noopener">Repository <span aria-hidden="true">&rarr;</span></a>
+          <article class="story story--sm">
+            <span class="story__label">JavaScript</span>
+            <h3 class="story__title"><a href="https://github.com/partofaplan/cafe-lean" target="_blank" rel="noopener">cafe-lean</a></h3>
+            <p class="story__body">Real-time Lean Coffee board with timers and live voting.</p>
           </article>
 
-          <article class="card card--sm">
-            <header class="card__head">
-              <h3 class="card__title">oracle-terraform</h3>
-              <span class="card__lang" data-lang="hcl">HCL</span>
-            </header>
-            <p class="card__body">Terraform for Oracle Cloud databases and RKE2 nodes.</p>
-            <a class="card__link" href="https://github.com/partofaplan/oracle-terraform" target="_blank" rel="noopener">Repository <span aria-hidden="true">&rarr;</span></a>
+          <article class="story story--sm">
+            <span class="story__label">HCL</span>
+            <h3 class="story__title"><a href="https://github.com/partofaplan/oracle-terraform" target="_blank" rel="noopener">oracle-terraform</a></h3>
+            <p class="story__body">Terraform for Oracle Cloud databases and RKE2 nodes.</p>
           </article>
 
-          <article class="card card--sm">
-            <header class="card__head">
-              <h3 class="card__title">observability-stack</h3>
-              <span class="card__lang" data-lang="k8s">Kubernetes</span>
-            </header>
-            <p class="card__body">Drop-in Elasticsearch and Kibana so new clusters have signals on day one.</p>
-            <a class="card__link" href="https://github.com/partofaplan/observability-stack" target="_blank" rel="noopener">Repository <span aria-hidden="true">&rarr;</span></a>
+          <article class="story story--sm">
+            <span class="story__label">Kubernetes</span>
+            <h3 class="story__title"><a href="https://github.com/partofaplan/observability-stack" target="_blank" rel="noopener">observability-stack</a></h3>
+            <p class="story__body">Drop-in Elasticsearch and Kibana so new clusters have signals on day one.</p>
           </article>
 
-          <article class="card card--sm">
-            <header class="card__head">
-              <h3 class="card__title">tank-duel</h3>
-              <span class="card__lang" data-lang="misc">Cross-platform</span>
-            </header>
-            <p class="card__body">Turn-based artillery game released for Windows, macOS, and Linux.</p>
-            <a class="card__link" href="https://github.com/partofaplan/tank-duel" target="_blank" rel="noopener">Repository <span aria-hidden="true">&rarr;</span></a>
+          <article class="story story--sm">
+            <span class="story__label">Cross-platform</span>
+            <h3 class="story__title"><a href="https://github.com/partofaplan/tank-duel" target="_blank" rel="noopener">tank-duel</a></h3>
+            <p class="story__body">Turn-based artillery game released for Windows, macOS, and Linux.</p>
           </article>
 
-          <article class="card card--sm">
-            <header class="card__head">
-              <h3 class="card__title">snake-game</h3>
-              <span class="card__lang" data-lang="js">JavaScript</span>
-            </header>
-            <p class="card__body">Snake with a leaderboard. Small, finished, deployed.</p>
-            <a class="card__link" href="https://github.com/partofaplan/snake-game" target="_blank" rel="noopener">Repository <span aria-hidden="true">&rarr;</span></a>
+          <article class="story story--sm">
+            <span class="story__label">JavaScript</span>
+            <h3 class="story__title"><a href="https://github.com/partofaplan/snake-game" target="_blank" rel="noopener">snake-game</a></h3>
+            <p class="story__body">Snake with a leaderboard. Small, finished, deployed.</p>
           </article>
 
         </div>
@@ -328,81 +298,37 @@
     </div>
   </section>
 
-  <!-- ─────────────────────────── SANDBOX SHELF ─────────────────────────── -->
-  <section class="section section--alt" id="sandbox">
+  <!-- ─────────────────────────── SANDBOX ─────────────────────────── -->
+  <section class="section" id="sandbox">
     <div class="wrap">
-      <div class="section__head" data-reveal>
+      <header class="section__head" data-reveal>
         <span class="kicker">Sandbox</span>
-        <h2 class="section__title">Learning by building</h2>
+        <h2 class="section__title">Learning by Building</h2>
         <p class="section__sub">Side repos, each answering one question.</p>
-      </div>
+      </header>
 
-      <div class="shelf">
-        <article class="sbox" data-reveal>
-          <h3 class="sbox__name">agentic-sandbox</h3>
-          <p class="sbox__q">Can an agent rank CVEs by real risk?</p>
-          <span class="sbox__lang">Python</span>
-        </article>
-
-        <article class="sbox" data-reveal>
-          <h3 class="sbox__name">aws-bedrock-sandbox</h3>
-          <p class="sbox__q">What's the smallest working Bedrock endpoint?</p>
-          <span class="sbox__lang">TypeScript</span>
-        </article>
-
-        <article class="sbox" data-reveal>
-          <h3 class="sbox__name">voice-ai-sandbox</h3>
-          <p class="sbox__q">How much of a voice assistant runs offline?</p>
-          <span class="sbox__lang">TypeScript</span>
-        </article>
-
-        <article class="sbox" data-reveal>
-          <h3 class="sbox__name">rancher-audit-log-sandbox</h3>
-          <p class="sbox__q">Where does Rancher write UI audit events?</p>
-          <span class="sbox__lang">Go</span>
-        </article>
-
-        <article class="sbox" data-reveal>
-          <h3 class="sbox__name">ai_sandbox</h3>
-          <p class="sbox__q">What does self-hosting a model cost?</p>
-          <span class="sbox__lang">Go</span>
-        </article>
-
-        <article class="sbox" data-reveal>
-          <h3 class="sbox__name">keda-sandbox</h3>
-          <p class="sbox__q">When does event-driven scaling beat HPA?</p>
-          <span class="sbox__lang">Python</span>
-        </article>
-
-        <article class="sbox" data-reveal>
-          <h3 class="sbox__name">pvc-sandbox</h3>
-          <p class="sbox__q">How do PVCs behave under a stateful Java app?</p>
-          <span class="sbox__lang">Java</span>
-        </article>
-
-        <article class="sbox" data-reveal>
-          <h3 class="sbox__name">claude-sandbox</h3>
-          <p class="sbox__q">What's it like to build directly on an LLM?</p>
-          <span class="sbox__lang">HTML</span>
-        </article>
-
-        <article class="sbox" data-reveal>
-          <h3 class="sbox__name">kubernetes-sandbox</h3>
-          <p class="sbox__q">What belongs in a shared build mono-repo?</p>
-          <span class="sbox__lang">Go</span>
-        </article>
-      </div>
+      <ol class="qa">
+        <li class="qa__item" data-reveal><p class="qa__q">Can an agent rank CVEs by real risk?</p><p class="qa__meta"><span>agentic-sandbox</span> &middot; Python</p></li>
+        <li class="qa__item" data-reveal><p class="qa__q">What's the smallest working Bedrock endpoint?</p><p class="qa__meta"><span>aws-bedrock-sandbox</span> &middot; TypeScript</p></li>
+        <li class="qa__item" data-reveal><p class="qa__q">How much of a voice assistant runs offline?</p><p class="qa__meta"><span>voice-ai-sandbox</span> &middot; TypeScript</p></li>
+        <li class="qa__item" data-reveal><p class="qa__q">Where does Rancher write UI audit events?</p><p class="qa__meta"><span>rancher-audit-log-sandbox</span> &middot; Go</p></li>
+        <li class="qa__item" data-reveal><p class="qa__q">What does self-hosting a model cost?</p><p class="qa__meta"><span>ai_sandbox</span> &middot; Go</p></li>
+        <li class="qa__item" data-reveal><p class="qa__q">When does event-driven scaling beat HPA?</p><p class="qa__meta"><span>keda-sandbox</span> &middot; Python</p></li>
+        <li class="qa__item" data-reveal><p class="qa__q">How do PVCs behave under a stateful Java app?</p><p class="qa__meta"><span>pvc-sandbox</span> &middot; Java</p></li>
+        <li class="qa__item" data-reveal><p class="qa__q">What's it like to build directly on an LLM?</p><p class="qa__meta"><span>claude-sandbox</span> &middot; HTML</p></li>
+        <li class="qa__item" data-reveal><p class="qa__q">What belongs in a shared build mono-repo?</p><p class="qa__meta"><span>kubernetes-sandbox</span> &middot; Go</p></li>
+      </ol>
     </div>
   </section>
 
   <!-- ─────────────────────────── EXPERIENCE ─────────────────────────── -->
   <section class="section" id="experience">
     <div class="wrap">
-      <div class="section__head" data-reveal>
-        <span class="kicker">Experience</span>
-        <h2 class="section__title">Ten years of platform work</h2>
+      <header class="section__head" data-reveal>
+        <span class="kicker">Career</span>
+        <h2 class="section__title">Ten Years of Platform Work</h2>
         <p class="section__sub">Defense, healthcare, SaaS, marketplace, and edge IoT.</p>
-      </div>
+      </header>
 
       <ol class="timeline">
 
@@ -598,84 +524,60 @@
   </section>
 
   <!-- ─────────────────────────── WRITING & TALKS ─────────────────────────── -->
-  <section class="section section--alt" id="writing">
+  <section class="section" id="writing">
     <div class="wrap">
-      <div class="section__head" data-reveal>
-        <span class="kicker">Writing</span>
-        <h2 class="section__title">Talks &amp; essays</h2>
+      <header class="section__head" data-reveal>
+        <span class="kicker">Opinion</span>
+        <h2 class="section__title">Talks &amp; Essays</h2>
         <p class="section__sub">Decks and drafts available on request.</p>
-      </div>
+      </header>
 
-      <div class="writing">
+      <div class="cols cols--4">
 
         <article class="post" data-reveal>
-          <div class="post__meta">
-            <span class="badge badge--talk">Conference talk</span>
-            <span class="post__venue">Nebraska.Code() &middot; 2022</span>
-          </div>
+          <p class="post__meta"><span class="badge">Conference talk</span> Nebraska.Code() &middot; 2022</p>
           <h3 class="post__title">Migrating Azure App Services to AKS</h3>
           <p class="post__body">Moving a production platform to Kubernetes, and retiring the overnight maintenance window.</p>
         </article>
 
         <article class="post" data-reveal>
-          <div class="post__meta">
-            <span class="badge badge--workshop">Workshop</span>
-            <span class="post__venue">Nebraska.Code() &middot; 2023</span>
-          </div>
+          <p class="post__meta"><span class="badge">Workshop</span> Nebraska.Code() &middot; 2023</p>
           <h3 class="post__title">Deploying Infrastructure with Pulumi</h3>
           <p class="post__body">Hands-on infrastructure as code in a general-purpose language.</p>
         </article>
 
         <article class="post" data-reveal>
-          <div class="post__meta">
-            <span class="badge badge--talk">Talk</span>
-            <span class="post__venue">2025</span>
-          </div>
+          <p class="post__meta"><span class="badge">Talk</span> 2025</p>
           <h3 class="post__title">The Key Is Culture</h3>
           <p class="post__body">Silos and hero culture come from broken systems, and culture is something you design.</p>
         </article>
 
         <article class="post" data-reveal>
-          <div class="post__meta">
-            <span class="badge badge--talk">Lightning talk</span>
-            <span class="post__venue">2026</span>
-          </div>
+          <p class="post__meta"><span class="badge">Lightning talk</span> 2026</p>
           <h3 class="post__title">Seeing Is Believing</h3>
           <p class="post__body">Why feedback loops belong in every environment, not just production.</p>
         </article>
 
         <article class="post" data-reveal>
-          <div class="post__meta">
-            <span class="badge badge--talk">Talk</span>
-            <span class="post__venue">2025</span>
-          </div>
+          <p class="post__meta"><span class="badge">Talk</span> 2025</p>
           <h3 class="post__title">The Power of Mission</h3>
           <p class="post__body">Goals get you to a finish line. A mission gives you a reason to keep going.</p>
         </article>
 
         <article class="post" data-reveal>
-          <div class="post__meta">
-            <span class="badge badge--essay">Essay</span>
-            <span class="post__venue">2026</span>
-          </div>
+          <p class="post__meta"><span class="badge">Essay</span> 2026</p>
           <h3 class="post__title">The Four Problem Buckets</h3>
           <p class="post__body">A triage framework: fix it now, handle with care, save for later, or skip the hero trap.</p>
         </article>
 
         <article class="post" data-reveal>
-          <div class="post__meta">
-            <span class="badge badge--essay">Essay</span>
-            <span class="post__venue">2026</span>
-          </div>
+          <p class="post__meta"><span class="badge">Essay</span> 2026</p>
           <h3 class="post__title">What DevOps Actually Means</h3>
           <p class="post__body">Solve problems with code, and plan and sandbox before you sprint.</p>
         </article>
 
         <article class="post" data-reveal>
-          <div class="post__meta">
-            <span class="badge badge--standards">Engineering standards</span>
-            <span class="post__venue">2025</span>
-          </div>
+          <p class="post__meta"><span class="badge">Standards</span> 2025</p>
           <h3 class="post__title">Platform Engineering Best Practices</h3>
           <p class="post__body">Team-wide standards for images, merge requests, Helm releases, and monitoring.</p>
         </article>
@@ -685,25 +587,26 @@
   </section>
 
   <!-- ─────────────────────────── CONTACT ─────────────────────────── -->
-  <section class="section section--contact" id="contact">
+  <section class="section" id="contact">
     <div class="wrap">
-      <div class="cta" data-reveal>
-        <span class="kicker">Contact</span>
-        <h2 class="cta__title">Let's <span class="grad-text">talk</span>.</h2>
-        <div class="contact__links">
-          <a class="contact__link" href="mailto:partofaplan@gmail.com">
-            <span class="contact__label">Email</span>
-            <span class="contact__value">partofaplan@gmail.com</span>
-          </a>
-          <a class="contact__link" href="https://www.linkedin.com/in/zachperkins" target="_blank" rel="noopener">
-            <span class="contact__label">LinkedIn</span>
-            <span class="contact__value">in/zachperkins</span>
-          </a>
-          <a class="contact__link" href="https://github.com/partofaplan" target="_blank" rel="noopener">
-            <span class="contact__label">GitHub</span>
-            <span class="contact__value">@partofaplan</span>
-          </a>
-        </div>
+      <header class="section__head" data-reveal>
+        <span class="kicker">Correspondence</span>
+        <h2 class="section__title">Get in Touch</h2>
+      </header>
+
+      <div class="cols cols--3 contact" data-reveal>
+        <a class="contact__link" href="mailto:partofaplan@gmail.com">
+          <span class="contact__label">Email</span>
+          <span class="contact__value">partofaplan@gmail.com</span>
+        </a>
+        <a class="contact__link" href="https://www.linkedin.com/in/zachperkins" target="_blank" rel="noopener">
+          <span class="contact__label">LinkedIn</span>
+          <span class="contact__value">in/zachperkins</span>
+        </a>
+        <a class="contact__link" href="https://github.com/partofaplan" target="_blank" rel="noopener">
+          <span class="contact__label">GitHub</span>
+          <span class="contact__value">@partofaplan</span>
+        </a>
       </div>
     </div>
   </section>
@@ -712,8 +615,8 @@
 
 <footer class="footer">
   <div class="wrap footer__inner">
-    <p>&copy; <span id="year">2026</span> Zach Perkins</p>
-    <p class="footer__note">No trackers, no cookies.</p>
+    <p>&copy; <span id="year">2026</span> Zach Perkins. Printed in Omaha, Nebraska.</p>
+    <p>No trackers, no cookies.</p>
   </div>
 </footer>
 

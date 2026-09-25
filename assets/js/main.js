@@ -28,12 +28,14 @@
     syncToggleLabel();
   }
 
-  /* ---------- nav: border, scroll progress, active section ---------- */
+  /* ---------- nav: masthead handoff, scroll progress, active section ---------- */
   var nav = document.getElementById('nav');
+  var masthead = document.getElementById('top');
   var progress = document.getElementById('navProgress');
 
   function onScroll() {
-    if (nav) nav.classList.toggle('is-stuck', window.scrollY > 8);
+    // Once the nameplate scrolls away, the sticky nav carries the name.
+    if (nav && masthead) nav.classList.toggle('is-stuck', masthead.getBoundingClientRect().bottom <= 0);
     if (progress) {
       var max = document.documentElement.scrollHeight - window.innerHeight;
       var pct = max > 0 ? (window.scrollY / max) * 100 : 0;
@@ -64,7 +66,7 @@
         var active = byId[entry.target.id];
         if (active) active.classList.add('is-active');
       });
-    }, { rootMargin: '-72px 0px -62% 0px', threshold: 0 });
+    }, { rootMargin: '-56px 0px -62% 0px', threshold: 0 });
 
     sections.forEach(function (s) { spy.observe(s); });
   }
@@ -94,6 +96,28 @@
       el.style.transitionDelay = (i % 6) * 60 + 'ms';
       revealer.observe(el);
     });
+  }
+
+  /* ---------- dateline ---------- */
+  var today = document.getElementById('today');
+  if (today) {
+    today.textContent = new Date().toLocaleDateString('en-US', {
+      weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+    });
+  }
+
+  /* ---------- "Latest" ticker ---------- */
+  var ticker = document.getElementById('ticker');
+  if (ticker) {
+    var items = Array.prototype.slice.call(ticker.querySelectorAll('.ticker__item'));
+    if (items.length > 1 && !reduced.matches) {
+      var at = 0;
+      setInterval(function () {
+        items[at].classList.remove('is-in');
+        at = (at + 1) % items.length;
+        items[at].classList.add('is-in');
+      }, 4200);
+    }
   }
 
   /* ---------- stat counters ---------- */
