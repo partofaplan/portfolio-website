@@ -66,8 +66,9 @@ red used for kickers, labels, and the active nav link.
 Light is the default. An inline script in `<head>` applies a saved preference or
 the OS setting before first paint, and also adds a `js` class to `<html>`.
 
-Type is Playfair Display for the nameplate and headlines, Source Serif 4 for
-body copy, and Libre Franklin for small caps labels.
+Type is all sans-serif: Libre Franklin (a Franklin Gothic revival, the classic
+newspaper sans) for the nameplate, headlines, and small caps labels, and
+Source Sans 3 for body copy.
 
 ## Motion
 

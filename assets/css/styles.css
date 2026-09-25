@@ -1,7 +1,7 @@
 /* ============================================================
    Zach Perkins — portfolio
    Newspaper layout, single stylesheet, no build step.
-   Ink on newsprint, one editorial red, hairline column rules.
+   Franklin Gothic-style sans on newsprint, one editorial red, hairline rules.
    ============================================================ */
 
 :root {
@@ -14,8 +14,8 @@
   --rule-soft: #d3cab8;
   --accent:    #9b1c1c;
 
-  --display: "Playfair Display", Georgia, "Times New Roman", serif;
-  --serif:   "Source Serif 4", Georgia, "Times New Roman", serif;
+  --display: "Libre Franklin", "Franklin Gothic Medium", "Helvetica Neue", Arial, sans-serif;
+  --body:    "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
   --sans:    "Libre Franklin", "Helvetica Neue", Arial, sans-serif;
   --mono:    ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 
@@ -47,7 +47,7 @@
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 64px; }
 body {
   margin: 0;
-  font-family: var(--serif);
+  font-family: var(--body);
   font-size: 17px;
   line-height: 1.6;
   color: var(--ink);
@@ -56,7 +56,7 @@ body {
   overflow-x: hidden;
   transition: background-color .3s ease, color .3s ease;
 }
-h1, h2, h3 { font-family: var(--display); font-weight: 700; line-height: 1.12; margin: 0; }
+h1, h2, h3 { font-family: var(--display); font-weight: 700; line-height: 1.15; letter-spacing: -0.015em; margin: 0; }
 p { margin: 0 0 1rem; }
 a { color: inherit; text-decoration-color: var(--rule-soft); text-underline-offset: .18em; }
 a:hover { color: var(--accent); text-decoration-color: currentColor; }
@@ -156,7 +156,7 @@ svg { max-width: 100%; }
   padding-top: 1.5rem; padding-bottom: 1rem;
 }
 .masthead__title {
-  font-weight: 900; line-height: .95; letter-spacing: -0.015em; text-align: center;
+  font-weight: 900; line-height: .95; letter-spacing: -0.04em; text-align: center;
   font-size: clamp(2.75rem, 12.5vw, 6.5rem);
 }
 .masthead__title a { color: var(--ink); text-decoration: none; }
@@ -195,7 +195,7 @@ svg { max-width: 100%; }
 .nav__inner { display: flex; align-items: center; height: 46px; }
 .nav__brand {
   flex: none; max-width: 0; overflow: hidden; opacity: 0;
-  font-family: var(--display); font-weight: 900; font-size: 1.125rem;
+  font-family: var(--display); font-weight: 900; font-size: 1.0625rem; letter-spacing: -0.02em;
   white-space: nowrap; text-decoration: none; color: var(--ink);
   transition: max-width .35s ease, opacity .35s ease, margin .35s ease;
 }
@@ -249,13 +249,13 @@ svg { max-width: 100%; }
 }
 
 .lead__headline {
-  font-weight: 900; letter-spacing: -0.01em; line-height: 1.05;
+  font-weight: 800; letter-spacing: -0.03em; line-height: 1.06;
   font-size: clamp(2rem, 5.6vw, 3.5rem);
   margin: .6rem 0 .8rem; text-wrap: balance;
 }
 .lead__deck {
-  font-family: var(--display); font-style: italic; font-weight: 400;
-  font-size: clamp(1.125rem, 2.4vw, 1.375rem); line-height: 1.35; color: var(--ink-2);
+  font-family: var(--body); font-weight: 400;
+  font-size: clamp(1.1875rem, 2.4vw, 1.4375rem); line-height: 1.4; color: var(--ink-2);
   margin-bottom: 1rem;
 }
 .byline {
@@ -264,14 +264,14 @@ svg { max-width: 100%; }
   font-family: var(--sans); font-size: .6875rem; font-weight: 600;
   text-transform: uppercase; letter-spacing: .12em; color: var(--muted);
 }
-.lead__body { color: var(--ink-2); hyphens: auto; }
+.lead__body { color: var(--ink-2); }
 @media (min-width: 700px) {
   .lead__body { columns: 2; column-gap: 2.25rem; column-rule: 1px solid var(--rule-soft); }
   .lead__body p { break-inside: avoid; }
 }
 .dropcap::first-letter {
   float: left; margin: .06em .12em 0 0;
-  font-family: var(--display); font-weight: 900; font-size: 3.7em; line-height: .8;
+  font-family: var(--display); font-weight: 900; font-size: 3.5em; line-height: .8;
   color: var(--accent);
 }
 .lead__actions { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: .5rem; }
@@ -324,13 +324,13 @@ svg { max-width: 100%; }
   padding-top: .75rem; margin-bottom: .75rem;
   border-top: 4px double var(--rule);
 }
-.section__title { font-weight: 900; font-size: clamp(1.75rem, 4.6vw, 2.625rem); letter-spacing: -0.01em; }
-.section__sub { margin: 0; font-style: italic; color: var(--muted); }
+.section__title { font-weight: 800; font-size: clamp(1.75rem, 4.6vw, 2.5rem); letter-spacing: -0.03em; }
+.section__sub { margin: 0; color: var(--muted); }
 
 /* ---------- principles ---------- */
 .principle__num {
   display: block; margin-bottom: .4rem;
-  font-family: var(--display); font-style: italic; font-weight: 700;
+  font-family: var(--display); font-weight: 800;
   font-size: 1.5rem; line-height: 1; color: var(--accent);
 }
 .principle__title { font-size: 1.25rem; margin-bottom: .5rem; }
@@ -347,7 +347,7 @@ svg { max-width: 100%; }
 .story__title a { text-decoration: none; }
 .story__title a:hover { text-decoration: underline; text-decoration-thickness: 1px; }
 .story__deck {
-  font-family: var(--display); font-style: italic; font-size: 1.0625rem; line-height: 1.35;
+  font-weight: 600; font-size: 1.0625rem; line-height: 1.35;
   color: var(--ink); margin-bottom: .5rem;
 }
 .story__body { font-size: .9375rem; color: var(--ink-2); margin-bottom: .75rem; }
@@ -400,8 +400,8 @@ svg { max-width: 100%; }
   text-transform: uppercase; letter-spacing: .1em; color: var(--muted); white-space: nowrap;
 }
 .job--current .job__dates { color: var(--accent); }
-.job__org { margin: .15rem 0 .75rem; font-family: var(--display); font-style: italic; font-size: 1.0625rem; color: var(--ink-2); }
-.job__summary { font-style: italic; color: var(--ink-2); max-width: 70ch; }
+.job__org { margin: .15rem 0 .75rem; font-family: var(--display); font-weight: 500; font-size: 1rem; color: var(--ink-2); }
+.job__summary { color: var(--ink-2); max-width: 70ch; }
 .job__points { margin-bottom: 1rem; }
 .job__points li {
   position: relative; break-inside: avoid;
